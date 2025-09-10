@@ -5,7 +5,7 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('./resources/อวกาศ.jpg');
+    background-image: url('./resources/ไร่ชา.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
+    background-color: #A5C663;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -28,15 +28,15 @@ header {
 }
 
 .logo-container img {
-    width: 100px;
+    width: 70px;
     height: auto;
     border-radius: 50%;
     margin-right: 10px;
 }
 
 .logo-container h1 {
-    font-size: 32px;
-    color: #ffffff;
+    font-size: 30px;
+    color: #3A665A;
     margin: 0;
 }
 
@@ -53,14 +53,14 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #ffffff;
+    color: #3A665A;
     font-weight: bold;
     transition: color 0.3s ease;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 nav a:hover {
-    color: #007bff;
+    color: #ffffff;
 }
 
 .recommend-a-website {
@@ -74,23 +74,56 @@ nav a:hover {
 }
 
 .hero-section {
-    text-align: center;
-    padding: 50px 20px;
+    display: flex; /* ทำให้เนื้อหาภายในเรียงกันในแนวนอน */
+    justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    gap: 40px; /* เพิ่มช่องว่างระหว่างวิดีโอกับเนื้อหา */
+    padding: 20px 20px;
     margin-bottom: 40px;
     background-color: #f0f0f0;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* ให้เนื้อหาขึ้นบรรทัดใหม่เมื่อหน้าจอเล็ก */
+}
+
+.hero-section video {
+    flex: 1; /* ให้วิดีโอขยายเต็มพื้นที่ที่เหลือ */
+    min-width: 400px; /* กำหนดความกว้างขั้นต่ำของวิดีโอ */
+    height: 400px; /* ลดความสูงลงเป็น 300px (คุณสามารถปรับค่าได้ตามต้องการ) */
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero-content { /* เพิ่ม Style ให้กับ div ใหม่ */
+    flex: 1.5; /* ให้เนื้อหามีขนาดใหญ่กว่าวิดีโอเล็กน้อย */
+    text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
 }
 
 .hero-section h2 {
-    font-size: 3rem;
-    color: #4338ca;
+    font-size: 40px;
+    color: #3A665A;
     margin-bottom: 15px;
     font-weight: 800;
 }
 
 .hero-section p {
-    font-size: 1.4rem;
+    font-size: 20px;
     color: #555;
     margin-bottom: 30px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column; /* เปลี่ยนให้เรียงเป็นแนวตั้งในหน้าจอเล็ก */
+        text-align: center;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-section video {
+        min-width: unset; /* ลบ min-width เพื่อให้วิดีโอปรับขนาดได้ */
+        width: 100%; /* ให้วิดีโอเต็มความกว้าง */
+    }
 }
