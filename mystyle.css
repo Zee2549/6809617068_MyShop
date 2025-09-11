@@ -92,7 +92,7 @@ nav a:hover {
     height: 400px; /* ลดความสูงลงเป็น 300px (คุณสามารถปรับค่าได้ตามต้องการ) */
     width: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px;
 }
 
 .hero-content { /* เพิ่ม Style ให้กับ div ใหม่ */
@@ -113,8 +113,75 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-/* Responsive adjustments for smaller screens */
+.featured-products {
+    padding: 50px 20px;
+    background-color: white; /* พื้นหลังส่วนสินค้าแนะนำ */
+    border-radius: 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: #3A665A;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.product-grid {
+    display: grid; /* ใช้ Grid Layout เพื่อจัดเรียงสินค้า */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 คอลัมน์ (ปรับได้) */
+    gap: 30px; /* ระยะห่างระหว่าง Product Card */
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 500px;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* ยกการ์ดขึ้นเมื่อเมาส์ชี้ */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%; /* ทำให้รูปภาพเต็มความกว้างของการ์ด */
+    height: 300px; /* กำหนดความสูงตายตัวให้รูปภาพ */
+    object-fit: cover; /* ครอปรูปภาพให้พอดี */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+    min-height: 50px; /* กำหนดความสูงขั้นต่ำเพื่อให้อธิบายยาวได้ */
+}
+
+/* Responsive สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ลดเหลือ 2 คอลัมน์หรือปรับอัตโนมัติ */
+        gap: 20px;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
     .hero-section {
         flex-direction: column; /* เปลี่ยนให้เรียงเป็นแนวตั้งในหน้าจอเล็ก */
         text-align: center;
@@ -125,5 +192,20 @@ nav a:hover {
     .hero-section video {
         min-width: unset; /* ลบ min-width เพื่อให้วิดีโอปรับขนาดได้ */
         width: 100%; /* ให้วิดีโอเต็มความกว้าง */
+    }
+    body{
+        width: 135%;
+    }
+    header {
+     width: 94%;
+}
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* เหลือ 1 คอลัมน์บนหน้าจอที่เล็กมากๆ */
+    }
+    .product-image {
+        height: 200px; /* ปรับความสูงรูปภาพสำหรับมือถือ */
     }
 }
