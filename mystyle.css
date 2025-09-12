@@ -146,6 +146,20 @@ nav a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 500px;
 }
+.category-card{
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 400px;
+}
+
+.category-card:hover{
+    transform: translateY(-10px); /* ยกการ์ดขึ้นเมื่อเมาส์ชี้ */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
 
 .product-card:hover {
     transform: translateY(-10px); /* ยกการ์ดขึ้นเมื่อเมาส์ชี้ */
@@ -161,7 +175,7 @@ nav a:hover {
 }
 
 .product-name {
-    font-size: 28px;
+    font-size: 26px;
     color: #333;
     margin-bottom: 10px;
 }
