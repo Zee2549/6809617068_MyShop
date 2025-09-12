@@ -223,3 +223,35 @@ nav a:hover {
         height: 200px; /* ปรับความสูงรูปภาพสำหรับมือถือ */
     }
 }
+
+.site-footer {
+    background-color: #ffffff;
+    color: #3A665A;
+    padding: 10px 10px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+.site-footer h3 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #3A665A;
+}
+
+.site-footer p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.site-footer a {
+    color: #3A665A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #6adabc;
+}
